@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Red - Web Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Map/Overworld Screen -->
+        <div id="mapScreen" class="screen active">
+            <div class="map" id="gameMap"></div>
+            <div class="hud">
+                <div class="player-info">
+                    <span id="playerName">Trainer</span>
+                    <div class="pokemon-team" id="pokemonTeam"></div>
+                </div>
+            </div>
+        </div>
 
+        <!-- Battle Screen -->
+        <div id="battleScreen" class="screen">
+            <div class="battle-container">
+                <div class="opponent-area">
+                    <div class="pokemon-sprite" id="opponentSprite"></div>
+                    <div class="pokemon-info">
+                        <div class="pokemon-name" id="opponentName"></div>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="opponentHP" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-area">
+                    <div class="pokemon-sprite" id="playerSprite"></div>
+                    <div class="pokemon-info">
+                        <div class="pokemon-name" id="playerPokemonName"></div>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="playerHP" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="battle-menu">
+                    <div class="message-box" id="battleMessage">
+                        <p id="messageText">What will you do?</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="attackBtn">Attack</button>
+                        <button class="action-btn" id="specialBtn">Special</button>
+                        <button class="action-btn" id="itemBtn">Item</button>
+                        <button class="action-btn" id="switchBtn">Switch</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Screen -->
+        <div id="menuScreen" class="screen">
+            <div class="menu">
+                <h2>Menu</h2>
+                <button class="menu-btn" onclick="game.showPokemonParty()">Pokémon</button>
+                <button class="menu-btn" onclick="game.showBag()">Bag</button>
+                <button class="menu-btn" onclick="game.showPokedex()">Pokédex</button>
+                <button class="menu-btn" onclick="game.closeMenu()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
